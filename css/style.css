@@ -1,24 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
 body {
-  margin: 1rem;
+  padding: 1rem;
   background-color: #d7e3fc;
   max-width: 1200px;
   margin: 0 auto;
+  color: #2d2d2d;
 }
 
 h1 {
   font-size: 3rem;
-}
-
-h1,
-h2,
-h3,
-p,
-a,
-li {
-  color: #2d2d2d;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 h1,
@@ -56,6 +47,20 @@ a:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   background: #edf2fb;
   background: radial-gradient(circle, #edf2fb 0%, #abc4ff 100%);
+  background-size: 200% 200%;
+  animation: gradient-move 10s infinite;
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .project-cards {
@@ -82,7 +87,8 @@ a:hover {
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
+  background-color: #e2eafc;
 }
 
 .image-container {
@@ -124,8 +130,8 @@ li {
 }
 
 li:hover {
-  transform: translateY(-5px);
-  transition: all 0.6s ease;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
 
 header {
@@ -133,6 +139,10 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #d7e3fc;
 }
 
 nav {
